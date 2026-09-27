@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles for Crown Care Dental Clinic & Implant Center */
+
+:root {
+  --primary-purple: #3D1A5B;
+  --dark-purple: #230C36;
+  --deep-purple: #180626;
+  --light-purple: #F6F1FB;
+  --soft-purple-border: #E8DCF3;
+  --gold-primary: #D4AF37;
+  --gold-light: #F7E7A9;
+  --gold-dark: #A67C1E;
+  --gold-gradient: linear-gradient(135deg, #FFE28A 0%, #D4AF37 50%, #B8861B 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #FFF0B8 0%, #E5C358 50%, #C99728 100%);
+  --purple-gradient: linear-gradient(135deg, #3D1A5B 0%, #240C38 100%);
+  --surface-white: #FFFFFF;
+  --surface-cream: #FCFAF7;
+}
+
+/* Typography Enhancements */
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #2D2738;
+  background-color: #FAF8FC;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: 'Playfair Display', Georgia, Cambria, serif;
+}
+
+/* Gold Gradient Text */
+.text-gold-gradient {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gold-gradient {
+  background: var(--gold-gradient);
+}
+
+.bg-gold-gradient:hover {
+  background: var(--gold-gradient-hover);
+}
+
+.border-gold-gradient {
+  border-image: var(--gold-gradient) 1;
+}
+
+/* Glassmorphism Classes */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(232, 220, 243, 0.8);
+}
+
+.glass-card-purple {
+  background: rgba(61, 26, 91, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+/* Luxury Shadows */
+.shadow-gold {
+  box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.25), 0 8px 10px -6px rgba(212, 175, 55, 0.2);
+}
+
+.shadow-purple {
+  box-shadow: 0 15px 30px -5px rgba(61, 26, 91, 0.18), 0 10px 15px -8px rgba(61, 26, 91, 0.12);
+}
+
+.shadow-card-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shadow-card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -5px rgba(61, 26, 91, 0.14), 0 12px 18px -8px rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.45);
+}
+
+/* Decorative Background Elements */
+.bg-mesh-pattern {
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.07) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(61, 26, 91, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(246, 241, 251, 0.8) 0%, transparent 100%);
+}
+
+.bg-hero-pattern {
+  background-color: #280E3C;
+  background-image: 
+    radial-gradient(circle at 85% 15%, rgba(212, 175, 55, 0.16) 0%, transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(138, 70, 196, 0.22) 0%, transparent 55%),
+    linear-gradient(180deg, #33134E 0%, #200932 100%);
+}
+
+/* Floating Animation */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatGentle 4.5s ease-in-out 1.5s infinite;
+}
+
+/* Pulse Glow */
+@keyframes goldPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(212, 175, 55, 0);
+  }
+}
+
+.animate-gold-pulse {
+  animation: goldPulse 2.5s infinite;
+}
+
+/* Modal Transition */
+.modal-overlay {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-content {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+/* Mobile bottom nav safe spacing */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 74px;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3EDF8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3D1A5B;
+  border-radius: 4px;
+  border: 2px solid #F3EDF8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Hide scrollbar for clean touch carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Horizontal Card Carousel for Mobile */
+@media (max-width: 639px) {
+  .mobile-swipe-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    gap: 1rem;
+  }
+  
+  .mobile-swipe-card {
+    flex: 0 0 82%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
+  .mobile-swipe-card-compact {
+    flex: 0 0 75%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+}
